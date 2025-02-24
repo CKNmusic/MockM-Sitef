@@ -71,7 +71,9 @@ class MainActivity : AppCompatActivity() {
         textViewRecebido.text = builder.toString()
 
         btnConfirmar.setOnClickListener {
-            val intent = Intent()
+            chamaDialogPrimeiraTela()
+
+            /*val intent = Intent()
 
             if (modalidade == "200") {
                 intent.apply {
@@ -106,7 +108,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             setResult(Activity.RESULT_OK, intent)
-            finish()
+            finish()*/
         }
 
         btnCancelar.setOnClickListener {
@@ -114,6 +116,13 @@ class MainActivity : AppCompatActivity() {
             finish()
         }
 
+
+
+    }
+
+    private fun chamaDialogPrimeiraTela() {
+        val dialog = DialogPrimeiraTelaFragment()
+        dialog.show(supportFragmentManager, "DialogPrimeiraTelaFragment")
     }
 
 }
